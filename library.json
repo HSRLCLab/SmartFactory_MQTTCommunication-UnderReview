@@ -1,0 +1,40 @@
+{
+    "name": "MQTTCommunication",
+    "keywords": "MQTT, web, communication",
+    "description": "MQTT communication for Sortic",
+    "homepage": null,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/philipzellweger/SmartFactory_MQTTCommunication.git"
+    },
+    "version": "2.0.0",
+    "authors": {
+        "name": "Philip Zellweger", 
+        "email": null,
+        "url": "https://github.com/philipzellweger"
+    },
+    "dependencies": [
+        {
+            "name": "PubSubClient"
+        },
+        {
+            "name": "WiFi101"
+        },
+        {
+            "name": "ArduinoJson"
+        },
+        {
+            "name": "CircularBuffer"
+        }
+    ],
+    "frameworks": "arduino",
+    "platforms": "*",
+    "export": {
+        "exclude": [
+            "doxygen",
+            "docs",
+            "test"
+        ]
+    },
+    "srcFilter": "-<doxygen/> -<docs/> -<test/>"
+}
