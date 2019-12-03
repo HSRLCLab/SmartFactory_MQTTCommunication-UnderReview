@@ -55,6 +55,8 @@ void callback(char* topic, byte* payload, unsigned int length);
 class Communication {
    public:
 
+    Communication(){};
+
     /**
     * @brief Construct a new Communication object
     * 
