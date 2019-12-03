@@ -123,9 +123,9 @@ class Network {
     String pSsid;        ///< Contains the SSID the WiFi shield is currently connected to.
     String pPassword;    ///< Contains WiFi Password
     int pWifi_CS;
-     int      pWiFi_IRQ;
-      int                                                                                                 pWifi_RST;
-         int                                                                                              pWifi_EN;
+    int pWiFi_IRQ;
+    int pWifi_RST;
+    int pWifi_EN;
     IPAddress pIPLocal;  ///< Contains own IP-Adress
     byte pMacRouter[6];  ///< Contains MAC Adress of the Router BSSID
     byte pMac[6];        ///< Contains own MAC Adress
