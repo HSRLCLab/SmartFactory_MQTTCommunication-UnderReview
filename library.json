@@ -18,7 +18,7 @@
             "name": "PubSubClient"
         },
         {
-            "name": "WiFi"
+            "name": "WiFi101"
         },
         {
             "name": "ArduinoJson"
