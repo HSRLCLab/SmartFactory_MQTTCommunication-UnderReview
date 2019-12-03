@@ -17,15 +17,14 @@
 #ifndef MQTTCOMMUNICATION_H__
 #define MQTTCOMMUNICATION_H__
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 #include "CommunicationConfiguration.h"
-
-#include <CircularBuffer.h>
 #include "Network/Network.h"
-#include "myJSON/myJSON.h"
 #include "myMQTT/myMQTT.h"
-#include "Messages.h"
+#include "Message.h"
+
+#define SORTIC
 
 /**
 * @brief If the client is used to subscribe to topics,
@@ -50,27 +49,12 @@
 void callback(char* topic, byte* payload, unsigned int length);
 
 /**
- * @brief Declare a global variable from typ myJSON so it can be accessed in callback
- * 
- */
-extern myJSON _myjson;
-
-/**
- * @brief Declares a global Circular Buffer of type myJSONStr with max Elements of MAX_JSON_MESSAGES_SAVED
- * 
- * When declaring your buffer you should specify the data type it must handle and the buffer capacity:
- * those two parameters will influence the memory consumed by the buffer.
- * https://github.com/rlogiacco/CircularBuffer 
- * 
- */
-extern CircularBuffer<myJSONStr, MAX_JSON_MESSAGES_SAVED> _buffer;
-
-/**
  * @brief The Connection-class provides the interface
  * 
  */
 class Communication {
    public:
+
     /**
     * @brief Construct a new Communication object
     * 
@@ -223,32 +207,6 @@ class Communication {
     }
     #endif
 
-    inline myJSONStr last() {
-        return _buffer.last();
-    }
-    
-
-    /**
-     * @brief Get the Element object
-     * 
-     * @param x - 
-     * @return myJSONStr - 
-     */
-    inline myJSONStr getElement(int x) {
-        return _buffer[x];
-    }
-
-    /**
-     * @brief Retriev data from the Tail (oldest Element) of the Buffer
-     * 
-     * Cause the element being read to be removed from the buffer
-     * Reading from an empty buffer is forbidden!!
-     * @return myJSONStr - The Element at the Tail
-     */
-    inline myJSONStr pop() {
-        return _buffer.pop();
-    }
-
     /**
      * @brief Check if the Buffer is empty
      * 
@@ -264,45 +222,7 @@ class Communication {
         return ;
     }
 
-    /**
-     * @brief Retriev data from the Head (newest Element) of the Buffer
-     *
-     * This operation is non destructiv and the element will NOT be removed from the buffer
-     * Reading from an empty buffer is forbidden!!
-     * @return myJSONStr - The Element at the Head
-     */
-    inline myJSONStr first() {
-        return _buffer.first();
-    }
-    /**
-     * @brief Retriev data from the Head (newest Element) of the Buffer
-     *
-     * Cause the element being read to be removed from the buffer
-     * Reading from an empty buffer is forbidden!!
-     * @return myJSONStr - The Element at the Head
-     */
-    inline myJSONStr shift() {
-        return _buffer.shift();
-    }
-
-    /**
-     * @brief  returns the number of elements currently stored in the buffer
-     *
-     * @return int - Currently sotred elements
-     */
-    inline int size() {
-        return _buffer.size();
-    }
-
-    /**
-     * @brief resets the whole buffer to its initial state
-     * 
-     */
-    inline void clear() {
-        _buffer.clear();
-    }
-
-   private:
+    private:
     String pHostname;
     WiFiClient pClient = WiFiClient();  ///< instance of WiFiClient
     Network pNetwork = Network(DEFAULT_WIFI_SSID,
