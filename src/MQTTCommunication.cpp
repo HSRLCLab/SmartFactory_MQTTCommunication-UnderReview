@@ -37,7 +37,7 @@ void callback(char* topic, byte* payload, unsigned int length)
     }
 
     // void pointer to receive translatet messagestruct to store in correct messagebuffer
-    void *tempMessage = translateJsonToStruct(payload_str, length);
+    MessageFrame *tempMessage = translateJsonToStruct((byte *)payload_str, length);
 
     // store messagestruct to correct buffer, check for dublicated messages
     switch (tempMessage->msgType)
@@ -45,8 +45,7 @@ void callback(char* topic, byte* payload, unsigned int length)
     case MessageType::Error:
         if (!(tempMessage->msgId == (errorMessageBuffer[1]->msgId))
         {
-            delete errorMessageBuffer[1];
-            errorMessageBuffer[1] = errorMessegeBuffer[0];
+            delete errorMessageBuffer[0];
             errorMessageBuffer[0] = tempMessage;
         }
         else
@@ -58,8 +57,7 @@ void callback(char* topic, byte* payload, unsigned int length)
     case MessageType::SBAvailable:
         if (!(tempMessage->msgId == (sbAvailableMessageBuffer[1][(tempMessage->msgConsignor)]->msgId)))
         {
-            delete sbAvailableMessageBuffer[1];
-            sbAvailableMessageBuffer[1] = sbAvailableMessageBuffer[0];
+            delete sbAvailableMessageBuffer[0];
             sbAvailableMessageBuffer[0] = tempMessage;
         }
         else
@@ -70,8 +68,7 @@ void callback(char* topic, byte* payload, unsigned int length)
     case MessageType::SBToSOHandshake:
         if (!(tempMessage->msgId == (handshakeMessageSBToSOBuffer[1][(tempMessage->msgConsignor)]->msgId)))
         {
-            delete handshakeMessageSBToSOBuffer[1];
-            handshakeMessageSBToSOBuffer[1] = handshakeMessageSBToSOBuffer[0];
+            delete handshakeMessageSBToSOBuffer[0];
             handshakeMessageSBToSOBuffer[0] = tempMessage;
         }
         else

@@ -23,6 +23,9 @@
 #include "Network/Network.h"
 #include "myMQTT/myMQTT.h"
 #include "Message.h"
+#include "MessageTranslation.h"
+#include "CommunicationCtrl.h"
+#include "MainConfiguration.h"
 
 #define SORTIC
 
@@ -164,8 +167,14 @@ class Communication {
     
     inline bool checkForNewError()
     {
-        if ((errorMessageBuffer[0].id) == (errorMessageBuffer[1].id))
+        if ((errorMessageBuffer[0].msgId) == (errorMessageBuffer[1].msgId) || (errorMessageBuffer[0].msgId == 0))
         {
+            // reset buffer to default
+            errorMessageBuffer[0].msgId = 0;
+            errorMessageBuffer[0].msgType = MessageType::DEFAULTMESSAGETYPE;
+            errorMessageBuffer[0].msgConsignor = Consignor::DEFUALTCONSIGNOR;
+            errorMessageBuffer[0].error = false;
+            errorMessageBuffer[0].token = false;
             return false;
         }
         return true;        
@@ -174,8 +183,15 @@ class Communication {
     #ifdef SORTIC
     inline bool checkForNewAvailableBox(int consignor)
     {
-        if ((availableMessageBuffer[0][consignor - 1].id) == (availableMessageBuffer[1][consignor - 1].id))
+        if (((sbAvailableMessageBuffer[0][consignor - 1].msgId) == (sbAvailableMessageBuffer[1][consignor - 1].msgId)) || ((sbAvailableMessageBuffer[0][consignor - 1].msgId) == 0))
         {
+            // reset buffer to default
+            sbAvailableMessageBuffer[0][consignor - 1].msgId = 0;
+            sbAvailableMessageBuffer[0][consignor - 1].msgType = MessageType::DEFAULTMESSAGETYPE;
+            sbAvailableMessageBuffer[0][consignor - 1].msgConsignor = Consignor::DEFUALTCONSIGNOR;
+            sbAvailableMessageBuffer[0][consignor - 1].sector = "-1";
+            sbAvailableMessageBuffer[0][consignor - 1].line = -1;
+            sbAvailableMessageBuffer[0][consignor - 1].targetReg = "-1";
             return false;
         }
         return true;
@@ -183,8 +199,14 @@ class Communication {
 
     inline bool checkForNewPositionBox(int consignor)
     {
-        if ((positionMessageBuffer[0][consignor - 1].id) == (positionMessageBuffer[1][consignor - 1]))
+        if ((sbPositionMessageBuffer[0][consignor - 1].msgId) == (sbPositionMessageBuffer[1][consignor - 1].msgId) || (sbPositionMessageBuffer[0][consignor - 1].msgId) == 0)
         {
+            // reset buffer to default
+            sbPositionMessageBuffer[0][consignor - 1].msgId = 0;
+            sbPositionMessageBuffer[0][consignor - 1].msgType = MessageType::DEFAULTMESSAGETYPE;
+            sbPositionMessageBuffer[0][consignor - 1].msgConsignor = Consignor::DEFUALTCONSIGNOR;
+            sbPositionMessageBuffer[0][consignor - 1].sector = "-1";
+            sbPositionMessageBuffer[0][consignor - 1].line = -1;
             return false;
         }
         return true;
@@ -192,8 +214,13 @@ class Communication {
 
     inline bool checkForNewStateBox(int consignor)
     {
-        if ((stateMessageBuffer[0][consignor - 1].id) == (stateMessageBuffer[1][consignor - 1].id))
+        if ((sbStateMessageBuffer[0][consignor - 1].msgId) == (sbStateMessageBuffer[1][consignor - 1].msgId) || (sbStateMessageBuffer[0][consignor - 1].msgId) == 0)
         {
+            // reset buffer to default
+            sbStateMessageBuffer[0][consignor - 1].msgId = 0;
+            sbStateMessageBuffer[0][consignor - 1].msgType = MessageType::DEFAULTMESSAGETYPE;
+            sbStateMessageBuffer[0][consignor - 1].msgConsignor = Consignor::DEFUALTCONSIGNOR;
+            sbStateMessageBuffer[0][consignor - 1].state = "-1";
             return false;
         }
         return true;        
@@ -201,29 +228,38 @@ class Communication {
 
     inline bool checkForNewHandshakeSBToSO(int consignor)
     {
-        if ((handshakeMessageSBToSOBuffer[0][consignor - 1].id) == (handshakeMessageSBToSOBuffer[1][consignor - 1].id))
+        if ((handshakeMessageSBToSOBuffer[0].msgId) == (handshakeMessageSBToSOBuffer[1].msgId) || (handshakeMessageSBToSOBuffer[0].msgId) == 0)
         {
+            handshakeMessageSBToSOBuffer[0].msgId = 0;
+            handshakeMessageSBToSOBuffer[0].msgType = MessageType::DEFAULTMESSAGETYPE;
+            handshakeMessageSBToSOBuffer[0].msgConsignor = Consignor::DEFUALTCONSIGNOR;
+            handshakeMessageSBToSOBuffer[0].req = "-1";
+            handshakeMessageSBToSOBuffer[0].ack = "-1";
+            handshakeMessageSBToSOBuffer[0].cargo = "-1";
+            handshakeMessageSBToSOBuffer[0].targetReg = "-1";
+            handshakeMessageSBToSOBuffer[0].line = -1;
             return false;
         }
         return true;        
     }
     #endif
-
+    
     /**
      * @brief Check if the Buffer is empty
      * 
      * @return true - if no data is stored in the buffer
      * @return false - if data is stored in the buffer
      */
+    /*
     inline bool isEmpty() {
-        if (/* condition */)
+        if ()
         {
-            /* code */
+            
         }
         
         return ;
     }
-
+    */
     private:
     String pHostname;
     WiFiClient pClient = WiFiClient();  ///< instance of WiFiClient
