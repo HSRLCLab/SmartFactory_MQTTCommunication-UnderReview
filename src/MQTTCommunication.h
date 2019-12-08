@@ -18,16 +18,15 @@
 #define MQTTCOMMUNICATION_H__
 
 #include <Arduino.h>
+#include <memory>
 
 #include "CommunicationConfiguration.h"
 #include "Network/Network.h"
 #include "myMQTT/myMQTT.h"
-#include "Message.h"
 #include "MessageTranslation.h"
-#include "CommunicationCtrl.h"
 #include "MainConfiguration.h"
+#include "LogConfiguration.h"
 
-#define SORTIC
 
 /**
 * @brief If the client is used to subscribe to topics,
@@ -167,114 +166,66 @@ class Communication {
     
     inline bool checkForNewError()
     {
-        if ((errorMessageBuffer[0].msgId) == (errorMessageBuffer[1].msgId) || (errorMessageBuffer[0].msgId == 0))
+        if(errorMessageBuffer.empty())
         {
-            // reset buffer to default
-            errorMessageBuffer[0].msgId = 0;
-            errorMessageBuffer[0].msgType = MessageType::DEFAULTMESSAGETYPE;
-            errorMessageBuffer[0].msgConsignor = Consignor::DEFUALTCONSIGNOR;
-            errorMessageBuffer[0].error = false;
-            errorMessageBuffer[0].token = false;
             return false;
         }
         return true;        
     }
 
-    #ifdef SORTIC
-    inline bool checkForNewAvailableBox(int consignor)
+    inline bool checkForNewAvailableBox()
     {
-        if (((sbAvailableMessageBuffer[0][consignor - 1].msgId) == (sbAvailableMessageBuffer[1][consignor - 1].msgId)) || ((sbAvailableMessageBuffer[0][consignor - 1].msgId) == 0))
+        if(sbAvailableMessageBuffer.empty())
         {
-            // reset buffer to default
-            sbAvailableMessageBuffer[0][consignor - 1].msgId = 0;
-            sbAvailableMessageBuffer[0][consignor - 1].msgType = MessageType::DEFAULTMESSAGETYPE;
-            sbAvailableMessageBuffer[0][consignor - 1].msgConsignor = Consignor::DEFUALTCONSIGNOR;
-            sbAvailableMessageBuffer[0][consignor - 1].sector = "-1";
-            sbAvailableMessageBuffer[0][consignor - 1].line = -1;
-            sbAvailableMessageBuffer[0][consignor - 1].targetReg = "-1";
             return false;
         }
         return true;
     }
 
-    inline bool checkForNewPositionBox(int consignor)
+    inline bool checkForNewPositionBox()
     {
-        if ((sbPositionMessageBuffer[0][consignor - 1].msgId) == (sbPositionMessageBuffer[1][consignor - 1].msgId) || (sbPositionMessageBuffer[0][consignor - 1].msgId) == 0)
+        if (sbPositionMessageBuffer.empty())
         {
-            // reset buffer to default
-            sbPositionMessageBuffer[0][consignor - 1].msgId = 0;
-            sbPositionMessageBuffer[0][consignor - 1].msgType = MessageType::DEFAULTMESSAGETYPE;
-            sbPositionMessageBuffer[0][consignor - 1].msgConsignor = Consignor::DEFUALTCONSIGNOR;
-            sbPositionMessageBuffer[0][consignor - 1].sector = "-1";
-            sbPositionMessageBuffer[0][consignor - 1].line = -1;
             return false;
-        }
-        return true;
-    }
-
-    inline bool checkForNewStateBox(int consignor)
-    {
-        if ((sbStateMessageBuffer[0][consignor - 1].msgId) == (sbStateMessageBuffer[1][consignor - 1].msgId) || (sbStateMessageBuffer[0][consignor - 1].msgId) == 0)
-        {
-            // reset buffer to default
-            sbStateMessageBuffer[0][consignor - 1].msgId = 0;
-            sbStateMessageBuffer[0][consignor - 1].msgType = MessageType::DEFAULTMESSAGETYPE;
-            sbStateMessageBuffer[0][consignor - 1].msgConsignor = Consignor::DEFUALTCONSIGNOR;
-            sbStateMessageBuffer[0][consignor - 1].state = "-1";
-            return false;
-        }
-        return true;        
-    }
-
-    inline bool checkForNewHandshakeSBToSO(int consignor)
-    {
-        if ((handshakeMessageSBToSOBuffer[0].msgId) == (handshakeMessageSBToSOBuffer[1].msgId) || (handshakeMessageSBToSOBuffer[0].msgId) == 0)
-        {
-            handshakeMessageSBToSOBuffer[0].msgId = 0;
-            handshakeMessageSBToSOBuffer[0].msgType = MessageType::DEFAULTMESSAGETYPE;
-            handshakeMessageSBToSOBuffer[0].msgConsignor = Consignor::DEFUALTCONSIGNOR;
-            handshakeMessageSBToSOBuffer[0].req = "-1";
-            handshakeMessageSBToSOBuffer[0].ack = "-1";
-            handshakeMessageSBToSOBuffer[0].cargo = "-1";
-            handshakeMessageSBToSOBuffer[0].targetReg = "-1";
-            handshakeMessageSBToSOBuffer[0].line = -1;
-            return false;
-        }
-        return true;        
-    }
-    #endif
-    
-    /**
-     * @brief Check if the Buffer is empty
-     * 
-     * @return true - if no data is stored in the buffer
-     * @return false - if data is stored in the buffer
-     */
-    /*
-    inline bool isEmpty() {
-        if ()
-        {
-            
         }
         
-        return ;
+        return true;
     }
-    */
+
+    inline bool checkForNewStateBox()
+    {
+        if (sbStateMessageBuffer.empty())
+        {
+            return false;
+        }
+        
+        return true;        
+    }
+
+    inline bool checkForNewHandshakeSBToSO()
+    {
+        if (handshakeMessageSBToSOBuffer.empty())
+        {
+            return false;
+        }
+        
+        return true;        
+    }
+    
+    
     private:
     String pHostname;
     WiFiClient pClient = WiFiClient();  ///< instance of WiFiClient
     Network pNetwork = Network(DEFAULT_WIFI_SSID,
-                               DEFAULT_WIFI_PASSWORD,
-                               DEFAULT_WIFI_CS,
-                               DEFAULT_WIFI_IRQ,
-                               DEFAULT_WIFI_RST,
-                               DEFAULT_WIFI_EN);  ///< instance of Network
+                               DEFAULT_WIFI_PASSWORD);  ///< instance of Network
     myMQTT pMymqtt = myMQTT(pHostname,
                             DEFAULT_MQTT_BROKER_IP1,
                             DEFAULT_MQTT_BROKER_IP2,
                             DEFAULT_MQTT_BROKER_IP3,
                             DEFAULT_MQTT_BROKER_IP4,
                             DEFAULT_MQTT_PORT);  ///< instance of myMQTT
+
+    //std::deque<std::shared_ptr<ErrorMessage>> errorMessageBuffer;
 
     void (*funcPointer)(char*, unsigned char*, unsigned int) = callback;  ///< functionpointer to callback-function
 };

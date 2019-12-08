@@ -37,69 +37,65 @@ void callback(char* topic, byte* payload, unsigned int length)
     }
 
     // void pointer to receive translatet messagestruct to store in correct messagebuffer
-    MessageFrame *tempMessage = translateJsonToStruct((byte *)payload_str, length);
-
+    const std::shared_ptr<Message> tempMessage = Message::translateJsonToStruct(payload_str, length);
     // store messagestruct to correct buffer, check for dublicated messages
-    switch (tempMessage->msgType)
+    switch ((Message::MessageType)tempMessage->msgType)
     {
-    case MessageType::Error:
-        if (!(tempMessage->msgId == (errorMessageBuffer[1]->msgId))
+    case Message::MessageType::Error:
+        for (int i = 0; i < errorMessageBuffer.size(); i++)
         {
-            delete errorMessageBuffer[0];
-            errorMessageBuffer[0] = tempMessage;
+            if ((errorMessageBuffer.at(i)->msgId == tempMessage->msgId) && (errorMessageBuffer.at(i)->msgConsignor == tempMessage->msgConsignor))
+            {
+                DBINFO3("Duplicated Message");
+                break;
+            } 
         }
-        else
-        {
-            DBINFO03("Duplicated Message");
-        }
+        errorMessageBuffer.push_front(std::dynamic_pointer_cast<ErrorMessage, Message>(tempMessage));
         break;
-    #ifdef SORTIC
-    case MessageType::SBAvailable:
-        if (!(tempMessage->msgId == (sbAvailableMessageBuffer[1][(tempMessage->msgConsignor)]->msgId)))
+    case Message::MessageType::SBAvailable:
+        for (int i = 0; i < sbAvailableMessageBuffer.size(); i++)
         {
-            delete sbAvailableMessageBuffer[0];
-            sbAvailableMessageBuffer[0] = tempMessage;
+            if ((sbAvailableMessageBuffer.at(i)->msgId == tempMessage->msgId) && (sbAvailableMessageBuffer.at(i)->msgConsignor == tempMessage->msgConsignor))
+            {
+                DBINFO3("Duplicated Message");
+                break;
+            } 
         }
-        else
-        {
-            DBINFO03("Duplicated Message");
-        }
+        sbAvailableMessageBuffer.push_front(std::dynamic_pointer_cast<SBAvailableMessage, Message>(tempMessage));
         break;
-    case MessageType::SBToSOHandshake:
-        if (!(tempMessage->msgId == (handshakeMessageSBToSOBuffer[1][(tempMessage->msgConsignor)]->msgId)))
+    case Message::MessageType::SBToSOHandshake:
+        for (int i = 0; i < handshakeMessageSBToSOBuffer.size(); i++)
         {
-            delete handshakeMessageSBToSOBuffer[0];
-            handshakeMessageSBToSOBuffer[0] = tempMessage;
+            if ((handshakeMessageSBToSOBuffer.at(i)->msgId == tempMessage->msgId) && (handshakeMessageSBToSOBuffer.at(i)->msgConsignor == tempMessage->msgConsignor))
+            {
+                DBINFO3("Duplicated Message");
+                break;
+            } 
         }
-        else
-        {
-            DBINFO03("Duplicated Message");
-        }
+        handshakeMessageSBToSOBuffer.push_front(std::dynamic_pointer_cast<SBToSOHandshakeMessage, Message>(tempMessage));
         break;
-    #else
     // define storage of received messages
         // TODO
-    case MessageType::SOPosition:
+    case Message::MessageType::SOPosition:
         break;
-    case MessageType::SOState:
+    case Message::MessageType::SOState:
         break;
-    case MessageType::SBToSVHandshake:
+    case Message::MessageType::SBToSVHandshake:
         break;
-    case MessageType::SVAvailable:
+    case Message::MessageType::SVAvailable:
         break;
-    case MessageType::SVPosition:
+    case Message::MessageType::SVPosition:
         break;
-    case MessageType::SVState:
+    case Message::MessageType::SVState:
         break;
-    case MessageType::Package:
+    case Message::MessageType::Package:
         break;
-    #endif  
     default:
         break;
     }
     String currentMessage = topic_str + " " + payload_str;
     DBINFO3("CurrMessage: ");
-    DBINFO3ln(currentMessage);    
+    DBINFO3ln(currentMessage);
 }
 
 Communication::Communication(String Hostname) : pHostname(Hostname) 

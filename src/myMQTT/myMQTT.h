@@ -16,13 +16,13 @@
 #ifndef MYMQTT_H__
 #define MYMQTT_H__
 
-#include "Arduino.h"
+#include <Arduino.h>
+#include <PubSubClient.h>
 
 #include "LogConfiguration.h"
-
 #include "Network/Network.h"
 // #include <WiFi101.h>
-#include <PubSubClient.h>
+
 
 /**
  * @brief Handels the MQTT connection

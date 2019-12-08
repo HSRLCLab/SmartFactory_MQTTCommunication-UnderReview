@@ -16,12 +16,10 @@
 #ifndef NETWORK_H__
 #define NETWORK_H__
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 #include "LogConfiguration.h"
-
-#include <SPI.h>
-#include <WiFi101.h>
+#include <WiFi.h>
 
 /**
  * @brief Handels the WLAN-Connection
@@ -40,7 +38,7 @@ class Network {
      * @param WIFI_RST - 
      * @param WIFI_EN - 
      */
-    Network(String ssid, String password, int WIFI_CS, int WIFI_IRQ, int WIFI_RST, int WIFI_EN);
+    Network(const char* ssid, const char* password);
 
     /**
      * @brief Intitialize WLan-Hardware
@@ -120,12 +118,8 @@ class Network {
      */
     String decodeEncryptionType(int errorcode);
 
-    String pSsid;        ///< Contains the SSID the WiFi shield is currently connected to.
-    String pPassword;    ///< Contains WiFi Password
-    int pWifi_CS;
-    int pWiFi_IRQ;
-    int pWifi_RST;
-    int pWifi_EN;
+    const char* pSsid;        ///< Contains the SSID the WiFi shield is currently connected to.
+    const char* pPassword;    ///< Contains WiFi Password
     IPAddress pIPLocal;  ///< Contains own IP-Adress
     byte pMacRouter[6];  ///< Contains MAC Adress of the Router BSSID
     byte pMac[6];        ///< Contains own MAC Adress

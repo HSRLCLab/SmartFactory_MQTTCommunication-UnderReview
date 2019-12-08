@@ -18,13 +18,10 @@
             "name": "PubSubClient"
         },
         {
-            "name": "WiFi101"
+            "name": "WiFi"
         },
         {
             "name": "ArduinoJson"
-        },
-        {
-            "name": "CircularBuffer"
         }
     ],
     "frameworks": "arduino",
