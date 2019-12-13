@@ -14,11 +14,12 @@
 #include "Network.h"
 //=====PUBLIC====================================================================================
 
-Network::Network(const char* ssid, const char* password) : pSsid(ssid), pPassword(password) {
+Network::Network(const char ssid[28], const char* password) : pSsid(ssid), pPassword(password) {
 }
 
 void Network::init() {
     DBFUNCCALLln("Network::init()");
+    /*
     if (WiFi.status() == WL_NO_SHIELD) {  // check if the shield is presence
         DBERROR("NO WiFi shield present");
         DBERROR("WiFi Library could not find WiFi shield. " + decodeWiFistate(WiFi.status()));
@@ -27,6 +28,7 @@ void Network::init() {
             // don't continue
         }
     }
+    */
     connectToWiFi();
 }
 
@@ -38,11 +40,12 @@ void Network::connectToWiFi() {
         DBINFO3ln("Attempting WLAN connection (WEP)...");
         DBINFO3ln("SSID: " + *pSsid);
         // DBINFO1ln("PW: " + pPassword);
-        if (WiFi.begin(pSsid, pPassword) != WL_CONNECTED) {
+        if (WiFi.begin((char*)pSsid, pPassword) != WL_CONNECTED) {
             DBERROR("WLAN connection failed");
             DBINFO3ln("trying again in 3 seconds");
             delay(3000);
         } else {
+            DBINFO3ln("WLAN conneceted");
             pIPLocal = WiFi.localIP();
             /*
             WiFi.macAddress(pMac);

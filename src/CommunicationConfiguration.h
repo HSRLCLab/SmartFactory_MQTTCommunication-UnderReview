@@ -20,8 +20,9 @@
 #define COMMUNICATIONCONFIGURATION_H
 
 //=============WLAN CONNECTION==================================
-#define DEFAULT_WIFI_SSID "DigitalLab"        ///< SSID to connect to
-#define DEFAULT_WIFI_PASSWORD "digital42HSR"  ///< Password to corresponding SSID
+//#define DEFAULT_WIFI_SSID "iPhone von Philip Zellweger"         ///< SSID to connect to
+#define DEFAULT_WIFI_PASSWORD "987654321"  ///< Password to corresponding SSID
+#define DEFAULT_WIFI_SSID "iPhone von Philip Zellweger"
 
 // Pins for Adafruit ATWINC1500 Feather https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/using-the-wifi-module
 #define DEFAULT_WIFI_CS 8   ///< Chipselct pin
@@ -31,10 +32,10 @@
 
 //=============MQTT==================================
 // * DEFAULT_MQTT_* are MQTT defaults
-#define DEFAULT_MQTT_BROKER_IP1 192  ///< broker IP distributed in 4 values
-#define DEFAULT_MQTT_BROKER_IP2 168  ///< broker IP distributed in 4 values
-#define DEFAULT_MQTT_BROKER_IP3 1    ///< broker IP distributed in 4 values
-#define DEFAULT_MQTT_BROKER_IP4 22   ///< broker IP distributed in 4 values
+#define DEFAULT_MQTT_BROKER_IP1 172  ///< broker IP distributed in 4 values
+#define DEFAULT_MQTT_BROKER_IP2 20  ///< broker IP distributed in 4 values
+#define DEFAULT_MQTT_BROKER_IP3 10    ///< broker IP distributed in 4 values
+#define DEFAULT_MQTT_BROKER_IP4 3   ///< broker IP distributed in 4 values
 #define DEFAULT_MQTT_PORT 1883       ///< MQTT connection port
 
 //=============JSON==================================

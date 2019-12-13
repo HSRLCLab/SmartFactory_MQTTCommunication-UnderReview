@@ -38,7 +38,7 @@ class Network {
      * @param WIFI_RST - 
      * @param WIFI_EN - 
      */
-    Network(const char* ssid, const char* password);
+    Network(const char ssid[28], const char* password);
 
     /**
      * @brief Intitialize WLan-Hardware

@@ -27,7 +27,6 @@
 #include "MainConfiguration.h"
 #include "LogConfiguration.h"
 
-
 /**
 * @brief If the client is used to subscribe to topics,
 * a callback function must be provided in the constructor. 
@@ -48,7 +47,7 @@
 * @param payload - the message payload (byte array)
 * @param length - the length of the message payload (unsigned int)
 */
-void callback(char* topic, byte* payload, unsigned int length);
+//void callback(char* topic, byte* payload, unsigned int length);
 
 /**
  * @brief The Connection-class provides the interface
@@ -63,7 +62,7 @@ class Communication {
     * @brief Construct a new Communication object
     * 
     */
-    Communication(String Hostname);
+    Communication(String Hostname, void (*callbackFPtr)(char*, unsigned char*, unsigned int));
 
     //==INTERFACE===================================
     /**
@@ -152,66 +151,6 @@ class Communication {
         pNetwork.connectToWiFi();
         return pMymqtt.publishMessage(topic, msg);
     }
-
-    //=======myJSON/Buffer============
-    //https://github.com/rlogiacco/CircularBuffer
-    /**
-     * @brief Retriev data from the Tail (oldest Element) of the Buffer
-     * 
-     * This operation is non destructiv and the element will NOT be removed from the buffer
-     * Reading from an empty buffer is forbidden!!
-     * @return myJSONStr - The Element at the Tail
-     */
-
-    
-    inline bool checkForNewError()
-    {
-        if(errorMessageBuffer.empty())
-        {
-            return false;
-        }
-        return true;        
-    }
-
-    inline bool checkForNewAvailableBox()
-    {
-        if(sbAvailableMessageBuffer.empty())
-        {
-            return false;
-        }
-        return true;
-    }
-
-    inline bool checkForNewPositionBox()
-    {
-        if (sbPositionMessageBuffer.empty())
-        {
-            return false;
-        }
-        
-        return true;
-    }
-
-    inline bool checkForNewStateBox()
-    {
-        if (sbStateMessageBuffer.empty())
-        {
-            return false;
-        }
-        
-        return true;        
-    }
-
-    inline bool checkForNewHandshakeSBToSO()
-    {
-        if (handshakeMessageSBToSOBuffer.empty())
-        {
-            return false;
-        }
-        
-        return true;        
-    }
-    
     
     private:
     String pHostname;
@@ -227,6 +166,6 @@ class Communication {
 
     //std::deque<std::shared_ptr<ErrorMessage>> errorMessageBuffer;
 
-    void (*funcPointer)(char*, unsigned char*, unsigned int) = callback;  ///< functionpointer to callback-function
+    void (*funcPointer)(char*, unsigned char*, unsigned int) = nullptr;  ///< functionpointer to callback-function
 };
 #endif
