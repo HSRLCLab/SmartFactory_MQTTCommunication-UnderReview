@@ -5,6 +5,7 @@
  * @author Luca Mazzoleni (luca.mazzoleni@hsr.ch)
  * 
  * @version 1.0 - added Network-Connection - Luca Mazzoleni (luca.mazzoleni@hsr.ch) - 2019-04-13
+ * @version 2.0 - Changed Wifi101 library to WiFi library for ESP32
  * 
  * @date 2019-04-13
  * @copyright Copyright (c) 2019
@@ -19,16 +20,6 @@ Network::Network(const char ssid[28], const char* password) : pSsid(ssid), pPass
 
 void Network::init() {
     DBFUNCCALLln("Network::init()");
-    /*
-    if (WiFi.status() == WL_NO_SHIELD) {  // check if the shield is presence
-        DBERROR("NO WiFi shield present");
-        DBERROR("WiFi Library could not find WiFi shield. " + decodeWiFistate(WiFi.status()));
-        DBINFO3ln("programm is not continuing");
-        while (true) {
-            // don't continue
-        }
-    }
-    */
     connectToWiFi();
 }
 

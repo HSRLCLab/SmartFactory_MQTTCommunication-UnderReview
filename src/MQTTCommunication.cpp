@@ -5,8 +5,9 @@
  * @author Luca Mazzoleni (luca.mazzoleni@hsr.ch)
  *
  * @version 1.0 - added Connection-Implementation - Luca Mazzoleni (luca.mazzoleni@hsr.ch) - 2019-04-16
+ * @version 2.0 - removed callback function and buffers - Philip Zellweger (philip.zellweger@hsr.ch) - 2019-12-16
  *
- * @date 2019-04-09
+ * @date 2019-12-16
  * @copyright Copyright (c) 2019
  *
  */

@@ -19,10 +19,10 @@
 #ifndef COMMUNICATIONCONFIGURATION_H
 #define COMMUNICATIONCONFIGURATION_H
 
-//=============WLAN CONNECTION==================================
-//#define DEFAULT_WIFI_SSID "iPhone von Philip Zellweger"         ///< SSID to connect to
-#define DEFAULT_WIFI_PASSWORD "987654321"  ///< Password to corresponding SSID
-#define DEFAULT_WIFI_SSID "iPhone von Philip Zellweger"
+//=============WLAN CONNECTION==================================         
+  
+#define DEFAULT_WIFI_SSID "iPhone von Philip Zellweger"         ///< SSID to connect to Network           
+#define DEFAULT_WIFI_PASSWORD "987654321"                       ///< Password to corresponding SSID
 
 // Pins for Adafruit ATWINC1500 Feather https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/using-the-wifi-module
 #define DEFAULT_WIFI_CS 8   ///< Chipselct pin

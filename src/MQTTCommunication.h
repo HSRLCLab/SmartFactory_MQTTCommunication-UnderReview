@@ -3,10 +3,12 @@
  * @brief The Connection-class is used as interface
  * 
  * @author Luca Mazzoleni (luca.mazzoleni@hsr.ch)
+ *         Philip Zellweger (philip.zellweger@hsr.ch)
  * 
  * @version 1.0 - added Connection-Implementation - Luca Mazzoleni (luca.mazzoleni@hsr.ch) - 2019-04-16
+ * @version 2.0 - removed callback function and buffers - Philip Zellweger (philip.zellweger@hsr.ch) - 2019-12-16
  * 
- * @date 2019-04-09
+ * @date 2019-12-16
  * @copyright Copyright (c) 2019
  * 
  * @todo Split the Code into two Repos: SmartFactory_Communication-Sortic\n
@@ -163,8 +165,6 @@ class Communication {
                             DEFAULT_MQTT_BROKER_IP3,
                             DEFAULT_MQTT_BROKER_IP4,
                             DEFAULT_MQTT_PORT);  ///< instance of myMQTT
-
-    //std::deque<std::shared_ptr<ErrorMessage>> errorMessageBuffer;
 
     void (*funcPointer)(char*, unsigned char*, unsigned int) = nullptr;  ///< functionpointer to callback-function
 };
