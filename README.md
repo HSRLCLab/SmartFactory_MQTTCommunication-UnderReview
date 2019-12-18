@@ -60,7 +60,7 @@ An MQTT-system always consist of a broker and one or multiple clients, which can
 
 A client can subscribe and publish to one or multiple topics. Topics are organized in a tree similar to a folder-structure in Windows. Here's an example of how such a topic-tree and published message can look like:
 
-<p align="center"><img src="./docs/images/MQTTTopics.png" height="600"/></p>
+<p align="center"><img src="./docs/MQTTTopics.png" height="600"/></p>
 
 This images also illustrates the scalability of MQTT appropriately.  
 For more Infos about MQTT and MQTT-topics check out the MQTT-Wiki on [Github](https://github.com/mqtt/mqtt.github.io/wiki).   
