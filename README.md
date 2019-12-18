@@ -87,9 +87,8 @@ All functions and files are documented on the [GitHub-Page with Doxygen](https:/
 
 External libraries:  
 * [PubSubClient](https://pubsubclient.knolleary.net/)
-* [WiFi]
+* [WiFi](https://www.arduino.cc/en/Reference/WiFi)
 * [ArduinoJson](https://arduinojson.org/)
-* [CircularBuffer](https://github.com/rlogiacco/CircularBuffer)
 
 ### Collaboration diagram
 
