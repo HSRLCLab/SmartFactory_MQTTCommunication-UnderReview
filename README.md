@@ -54,7 +54,7 @@ The used IDE is [VSCode](https://code.visualstudio.com/) with the [PlatformIO](h
 MQTT (Message Queuing Telemetry Transport) is a lightweight publish-subscribe messaging protocol and requires a broker to relay the messages. It's used for M2M (machine-to-machine) communication.  
 An MQTT-system always consist of a broker and one or multiple clients, which can be either subscriber or publisher. 
 
-<p align="center"><img https://www.eclipse.org/community/eclipse_newsletter/2014/october/images/article1.1.png height="300"/></p> 
+![mqtt](https://www.eclipse.org/community/eclipse_newsletter/2014/october/images/article1.1.png)
 
 [Image: [MQTT101 - Eclispe Foundation](<https://www.eclipse.org/community/eclipse_newsletter/2014/october/article2.php>)]
 
@@ -142,6 +142,7 @@ In the *CommunicationConfiguration.h*-file are all important settings defined:
 
 # Changelog
 V 1.0	-	Release BA FS19	-	[Luca Mazzoleni](https://github.com/LMazzole)
+
 V 2.0   -	Release SA HS20 -	[Philip Zellweger](https://github.com/philipzellweger)
 
 # License
