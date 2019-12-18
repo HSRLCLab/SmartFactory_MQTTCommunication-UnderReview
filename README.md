@@ -71,7 +71,7 @@ For more Infos about MQTT and MQTT-topics check out the MQTT-Wiki on [Github](ht
 # Documentation
 ## Hardware
 This code needs a WLAN-shield to function properly.  
-It's tested with a [Adafruit Feather M0 WiFi - ATSAMD21 + ATWINC1500](https://www.adafruit.com/product/3010) from Adafruit.
+It's tested with a [Esp32 DevKitC](https://www.espressif.com/en/products/hardware/esp32-devkitc/overview) from Espressif.
 
 ## Software
 All functions and files are documented on the [GitHub-Page with Doxygen](https://lmazzole.github.io/SmartFactory_MQTTCommunication/)
