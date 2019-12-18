@@ -54,7 +54,7 @@ The used IDE is [VSCode](https://code.visualstudio.com/) with the [PlatformIO](h
 MQTT (Message Queuing Telemetry Transport) is a lightweight publish-subscribe messaging protocol and requires a broker to relay the messages. It's used for M2M (machine-to-machine) communication.  
 An MQTT-system always consist of a broker and one or multiple clients, which can be either subscriber or publisher. 
 
-<p align="center"><img src="./docs/images/MQTTPublishSubscribe.png" height="300"/></p> 
+<p align="center"><img https://www.eclipse.org/community/eclipse_newsletter/2014/october/images/article1.1.png height="300"/></p> 
 
 [Image: [MQTT101 - Eclispe Foundation](<https://www.eclipse.org/community/eclipse_newsletter/2014/october/article2.php>)]
 
