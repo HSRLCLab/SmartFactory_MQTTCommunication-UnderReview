@@ -132,7 +132,7 @@ In the *CommunicationConfiguration.h*-file are all important settings defined:
 
 # ToDo's
 
-- [ ]
+All the ToDo's are documented in the source code with Doxygen.
 
 # Contributors
 - [Philip Zellweger](https://github.com/philipzellweger)
