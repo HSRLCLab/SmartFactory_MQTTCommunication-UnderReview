@@ -7,6 +7,7 @@
  * @author Luca Mazzoleni (luca.mazzoleni@hsr.ch)
  * 
  * @version 1.0 - added Network-Connection - Luca Mazzoleni (luca.mazzoleni@hsr.ch) - 2019-04-13
+ * @version 2.0 - Changed Wifi101 library to WiFi library for ESP32 - Philip Zellweger (philip.zellweger@hsr.ch) - 2019-04-13
  * 
  * @date 2019-04-13
  * @copyright Copyright (c) 2019
