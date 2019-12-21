@@ -1,0 +1,10 @@
+<map id="Network::connectToWiFi" name="Network::connectToWiFi">
+<area shape="rect" id="node1" title="Connects to a WiFi with the given Credential." alt="" coords="712,107,876,133"/>
+<area shape="rect" id="node2" href="$class_network.html#a92193e6fe7a1dc2c7a42d9c9cfed81ed" title="Intitialize WLan&#45;Hardware." alt="" coords="509,5,604,32"/>
+<area shape="rect" id="node5" href="$class_communication.html#a751d7d863cb0d5a93cd3490012984c55" title="This should be called regularly to allow the client to process incoming messages and maintain its con..." alt="" coords="485,56,629,83"/>
+<area shape="rect" id="node6" href="$class_communication.html#aa59e118e1ed15e911ae2534274ab2e58" title="handles outgoing MQTT messages to Server" alt="" coords="449,107,664,133"/>
+<area shape="rect" id="node7" href="$class_communication.html#ae7600b9fe0f1249effde2852e8101593" title="subsribes to MQTT topic on Server" alt="" coords="469,157,645,184"/>
+<area shape="rect" id="node8" href="$class_communication.html#a6be65dea68cf039e41df2986386dac61" title="unsubsribes from MQTT topic on Server" alt="" coords="461,208,652,235"/>
+<area shape="rect" id="node3" href="$class_communication.html#aa526fb8aa735ea4457dc56d1f0a4fe00" title="Initializes the Hard&#45; and Software for WLAN and MQTT&#45;Connection." alt="" coords="264,5,401,32"/>
+<area shape="rect" id="node4" href="$class_communication.html#a51041477e5e009142531ff15650d2d83" title="Construct a new Communication object." alt="" coords="5,5,216,32"/>
+</map>

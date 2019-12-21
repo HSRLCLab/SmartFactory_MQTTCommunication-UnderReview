@@ -1,0 +1,5 @@
+<map id="Communication" name="Communication">
+<area shape="rect" id="node1" title="If the client is used to subscribe to topics, a callback function must be provided in the constructor..." alt="" coords="120,351,256,560"/>
+<area shape="rect" id="node2" href="$class_network.html" title="Handels the WLAN&#45;Connection." alt="" coords="5,5,176,288"/>
+<area shape="rect" id="node3" href="$classmy_m_q_t_t.html" title="Handels the MQTT connection." alt="" coords="200,27,373,266"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="myMQTT::MQTTConnectionFailed" name="myMQTT::MQTTConnectionFailed">
+<area shape="rect" id="node1" title="Writes Error&#45;Message about MQTT connection." alt="" coords="979,107,1197,133"/>
+<area shape="rect" id="node2" href="$classmy_m_q_t_t.html#a6d495c08a06513954b95d961f0595959" title="Connects to the MQTT&#45;server." alt="" coords="752,107,931,133"/>
+<area shape="rect" id="node3" href="$classmy_m_q_t_t.html#a5f19e4308e3dc2d748291d3ca1cd9228" title=" " alt="" coords="565,5,665,32"/>
+<area shape="rect" id="node6" href="$classmy_m_q_t_t.html#a16792912f95306c1de19dd10d9ee9d87" title="This should be called regularly to allow the client to process incoming messages and maintain its con..." alt="" coords="562,56,669,83"/>
+<area shape="rect" id="node8" href="$classmy_m_q_t_t.html#ae15c915d8f868cc4cf5505c20f3d9816" title="handles outgoing MQTT messages to Server" alt="" coords="527,107,704,133"/>
+<area shape="rect" id="node10" href="$classmy_m_q_t_t.html#a55566e23e8705bf3390b6f8209cbd9a1" title="subsribes to MQTT topic on Server" alt="" coords="546,157,685,184"/>
+<area shape="rect" id="node12" href="$classmy_m_q_t_t.html#a215cee06699f991dd068e92e302563a5" title="unsubsribes from MQTT topic on Server" alt="" coords="539,208,692,235"/>
+<area shape="rect" id="node4" href="$class_communication.html#aa526fb8aa735ea4457dc56d1f0a4fe00" title="Initializes the Hard&#45; and Software for WLAN and MQTT&#45;Connection." alt="" coords="303,5,440,32"/>
+<area shape="rect" id="node5" href="$class_communication.html#a51041477e5e009142531ff15650d2d83" title="Construct a new Communication object." alt="" coords="5,5,216,32"/>
+<area shape="rect" id="node7" href="$class_communication.html#a751d7d863cb0d5a93cd3490012984c55" title="This should be called regularly to allow the client to process incoming messages and maintain its con..." alt="" coords="299,56,443,83"/>
+<area shape="rect" id="node9" href="$class_communication.html#aa59e118e1ed15e911ae2534274ab2e58" title="handles outgoing MQTT messages to Server" alt="" coords="264,107,479,133"/>
+<area shape="rect" id="node11" href="$class_communication.html#ae7600b9fe0f1249effde2852e8101593" title="subsribes to MQTT topic on Server" alt="" coords="283,157,459,184"/>
+<area shape="rect" id="node13" href="$class_communication.html#a6be65dea68cf039e41df2986386dac61" title="unsubsribes from MQTT topic on Server" alt="" coords="276,208,467,235"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Network::printCurrentNet" name="Network::printCurrentNet">
+<area shape="rect" id="node1" title="Prints all relevant Information of the current Network." alt="" coords="5,31,169,57"/>
+<area shape="rect" id="node2" href="$class_network.html#a07eee94a1b113e65c9d1c6b8c6c6ee44" title="Construct a new decode Encryption Type object." alt="" coords="217,5,427,32"/>
+<area shape="rect" id="node3" href="$class_network.html#aa141de92c8e5807f8d69f544fa497705" title="Pritns Mac&#45;address." alt="" coords="235,56,409,83"/>
+</map>

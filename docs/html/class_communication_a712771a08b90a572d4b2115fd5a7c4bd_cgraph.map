@@ -1,0 +1,8 @@
+<map id="Communication::printNetworkInfo" name="Communication::printNetworkInfo">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,217,57"/>
+<area shape="rect" id="node2" href="$class_network.html#a268526f3cebea91d533596f707b9ee01" title="Prints all relevant Network&#45;Information of the connected network to serial." alt="" coords="265,31,435,57"/>
+<area shape="rect" id="node3" href="$class_network.html#ad2735cbfe5093d27985c310728e166b6" title="Prints all relevant Information of the current Network." alt="" coords="483,5,647,32"/>
+<area shape="rect" id="node6" href="$class_network.html#a0a51c159d16b9c5abce7e25231a0776a" title="Prints all relevant WiFi&#45;Information of the connected network to serial." alt="" coords="487,56,643,83"/>
+<area shape="rect" id="node4" href="$class_network.html#a07eee94a1b113e65c9d1c6b8c6c6ee44" title="Construct a new decode Encryption Type object." alt="" coords="695,5,904,32"/>
+<area shape="rect" id="node5" href="$class_network.html#aa141de92c8e5807f8d69f544fa497705" title="Pritns Mac&#45;address." alt="" coords="712,56,887,83"/>
+</map>

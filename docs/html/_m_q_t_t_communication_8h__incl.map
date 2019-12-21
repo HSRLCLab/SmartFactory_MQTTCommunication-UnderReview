@@ -1,0 +1,13 @@
+<map id="MQTTCommunication.h" name="MQTTCommunication.h">
+<area shape="rect" id="node1" title="The Connection&#45;class is used as interface." alt="" coords="393,5,551,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,229,83,256"/>
+<area shape="rect" id="node3" title=" " alt="" coords="473,80,543,107"/>
+<area shape="rect" id="node4" href="$_communication_configuration_8h.html" title="file that contains the default communication configuration" alt="" coords="567,80,766,107"/>
+<area shape="rect" id="node5" href="$_network_8h.html" title="The Network class establishes a WLAN&#45;Connection." alt="" coords="81,155,212,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="195,229,325,256"/>
+<area shape="rect" id="node8" href="$my_m_q_t_t_8h.html" title="This class handels the MQTT connection." alt="" coords="185,80,327,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="791,80,940,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="964,80,1100,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="111,229,171,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="287,155,399,181"/>
+</map>

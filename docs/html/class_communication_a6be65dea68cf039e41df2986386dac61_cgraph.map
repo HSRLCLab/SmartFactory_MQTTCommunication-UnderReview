@@ -1,0 +1,9 @@
+<map id="Communication::unsubscribe" name="Communication::unsubscribe">
+<area shape="rect" id="node1" title="unsubsribes from MQTT topic on Server" alt="" coords="5,31,196,57"/>
+<area shape="rect" id="node2" href="$class_network.html#ad7fff536b31740411da0e7c8f281eda9" title="Connects to a WiFi with the given Credential." alt="" coords="244,5,408,32"/>
+<area shape="rect" id="node4" href="$classmy_m_q_t_t.html#a215cee06699f991dd068e92e302563a5" title="unsubsribes from MQTT topic on Server" alt="" coords="249,56,403,83"/>
+<area shape="rect" id="node3" href="$class_network.html#a31ebd477ecb0f08f85b7fa52b9f2bb7a" title="Decodes the Error Values from Wifi status() and returns a description." alt="" coords="458,5,633,32"/>
+<area shape="rect" id="node5" href="$classmy_m_q_t_t.html#a6d495c08a06513954b95d961f0595959" title="Connects to the MQTT&#45;server." alt="" coords="456,56,635,83"/>
+<area shape="rect" id="node6" href="$classmy_m_q_t_t.html#ae4372969b093a2487479005ccb398cbc" title="Decodes the Error Values from MQTT state() and returns a description." alt="" coords="949,56,1139,83"/>
+<area shape="rect" id="node7" href="$classmy_m_q_t_t.html#a260a10a835dc83e7268bc901c5a45a00" title="Writes Error&#45;Message about MQTT connection." alt="" coords="683,81,901,108"/>
+</map>

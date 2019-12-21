@@ -1,0 +1,4 @@
+<map id="Communication::init" name="Communication::init">
+<area shape="rect" id="node1" title="Initializes the Hard&#45; and Software for WLAN and MQTT&#45;Connection." alt="" coords="264,5,401,32"/>
+<area shape="rect" id="node2" href="$class_communication.html#a51041477e5e009142531ff15650d2d83" title="Construct a new Communication object." alt="" coords="5,5,216,32"/>
+</map>

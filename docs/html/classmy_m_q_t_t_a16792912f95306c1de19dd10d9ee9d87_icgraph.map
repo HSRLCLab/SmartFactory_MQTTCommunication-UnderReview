@@ -1,0 +1,4 @@
+<map id="myMQTT::loop" name="myMQTT::loop">
+<area shape="rect" id="node1" title="This should be called regularly to allow the client to process incoming messages and maintain its con..." alt="" coords="197,5,304,32"/>
+<area shape="rect" id="node2" href="$class_communication.html#a751d7d863cb0d5a93cd3490012984c55" title="This should be called regularly to allow the client to process incoming messages and maintain its con..." alt="" coords="5,5,149,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="myMQTT::publishMessage" name="myMQTT::publishMessage">
+<area shape="rect" id="node1" title="handles outgoing MQTT messages to Server" alt="" coords="268,5,445,32"/>
+<area shape="rect" id="node2" href="$class_communication.html#aa59e118e1ed15e911ae2534274ab2e58" title="handles outgoing MQTT messages to Server" alt="" coords="5,5,220,32"/>
+</map>

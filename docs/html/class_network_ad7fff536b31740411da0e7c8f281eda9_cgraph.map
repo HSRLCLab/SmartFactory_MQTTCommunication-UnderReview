@@ -1,0 +1,4 @@
+<map id="Network::connectToWiFi" name="Network::connectToWiFi">
+<area shape="rect" id="node1" title="Connects to a WiFi with the given Credential." alt="" coords="5,5,169,32"/>
+<area shape="rect" id="node2" href="$class_network.html#a31ebd477ecb0f08f85b7fa52b9f2bb7a" title="Decodes the Error Values from Wifi status() and returns a description." alt="" coords="217,5,392,32"/>
+</map>

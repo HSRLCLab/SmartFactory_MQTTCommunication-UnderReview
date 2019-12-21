@@ -1,0 +1,4 @@
+<map id="myMQTT::subscribe" name="myMQTT::subscribe">
+<area shape="rect" id="node1" title="subsribes to MQTT topic on Server" alt="" coords="229,5,368,32"/>
+<area shape="rect" id="node2" href="$class_communication.html#ae7600b9fe0f1249effde2852e8101593" title="subsribes to MQTT topic on Server" alt="" coords="5,5,181,32"/>
+</map>

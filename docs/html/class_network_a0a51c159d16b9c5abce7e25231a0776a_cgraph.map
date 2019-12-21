@@ -1,0 +1,4 @@
+<map id="Network::printWiFiData" name="Network::printWiFiData">
+<area shape="rect" id="node1" title="Prints all relevant WiFi&#45;Information of the connected network to serial." alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node2" href="$class_network.html#aa141de92c8e5807f8d69f544fa497705" title="Pritns Mac&#45;address." alt="" coords="209,5,384,32"/>
+</map>

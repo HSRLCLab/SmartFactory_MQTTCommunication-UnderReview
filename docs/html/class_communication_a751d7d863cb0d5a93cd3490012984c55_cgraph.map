@@ -1,0 +1,9 @@
+<map id="Communication::loop" name="Communication::loop">
+<area shape="rect" id="node1" title="This should be called regularly to allow the client to process incoming messages and maintain its con..." alt="" coords="5,31,149,57"/>
+<area shape="rect" id="node2" href="$class_network.html#ad7fff536b31740411da0e7c8f281eda9" title="Connects to a WiFi with the given Credential." alt="" coords="197,5,361,32"/>
+<area shape="rect" id="node4" href="$classmy_m_q_t_t.html#a16792912f95306c1de19dd10d9ee9d87" title="This should be called regularly to allow the client to process incoming messages and maintain its con..." alt="" coords="226,56,333,83"/>
+<area shape="rect" id="node3" href="$class_network.html#a31ebd477ecb0f08f85b7fa52b9f2bb7a" title="Decodes the Error Values from Wifi status() and returns a description." alt="" coords="411,5,586,32"/>
+<area shape="rect" id="node5" href="$classmy_m_q_t_t.html#a6d495c08a06513954b95d961f0595959" title="Connects to the MQTT&#45;server." alt="" coords="409,56,588,83"/>
+<area shape="rect" id="node6" href="$classmy_m_q_t_t.html#ae4372969b093a2487479005ccb398cbc" title="Decodes the Error Values from MQTT state() and returns a description." alt="" coords="903,56,1092,83"/>
+<area shape="rect" id="node7" href="$classmy_m_q_t_t.html#a260a10a835dc83e7268bc901c5a45a00" title="Writes Error&#45;Message about MQTT connection." alt="" coords="636,81,855,108"/>
+</map>

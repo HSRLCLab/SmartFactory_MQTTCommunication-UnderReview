@@ -1,0 +1,7 @@
+<map id="Network::printMacAddress" name="Network::printMacAddress">
+<area shape="rect" id="node1" title="Pritns Mac&#45;address." alt="" coords="695,31,869,57"/>
+<area shape="rect" id="node2" href="$class_network.html#ad2735cbfe5093d27985c310728e166b6" title="Prints all relevant Information of the current Network." alt="" coords="483,5,647,32"/>
+<area shape="rect" id="node5" href="$class_network.html#a0a51c159d16b9c5abce7e25231a0776a" title="Prints all relevant WiFi&#45;Information of the connected network to serial." alt="" coords="487,56,643,83"/>
+<area shape="rect" id="node3" href="$class_network.html#a268526f3cebea91d533596f707b9ee01" title="Prints all relevant Network&#45;Information of the connected network to serial." alt="" coords="265,31,435,57"/>
+<area shape="rect" id="node4" href="$class_communication.html#a712771a08b90a572d4b2115fd5a7c4bd" title=" " alt="" coords="5,31,217,57"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="Communication::init" name="Communication::init">
+<area shape="rect" id="node1" title="Initializes the Hard&#45; and Software for WLAN and MQTT&#45;Connection." alt="" coords="5,56,143,83"/>
+<area shape="rect" id="node2" href="$classmy_m_q_t_t.html#a5f19e4308e3dc2d748291d3ca1cd9228" title=" " alt="" coords="191,31,291,57"/>
+<area shape="rect" id="node6" href="$class_network.html#a92193e6fe7a1dc2c7a42d9c9cfed81ed" title="Intitialize WLan&#45;Hardware." alt="" coords="193,81,288,108"/>
+<area shape="rect" id="node3" href="$classmy_m_q_t_t.html#a6d495c08a06513954b95d961f0595959" title="Connects to the MQTT&#45;server." alt="" coords="339,31,517,57"/>
+<area shape="rect" id="node4" href="$classmy_m_q_t_t.html#ae4372969b093a2487479005ccb398cbc" title="Decodes the Error Values from MQTT state() and returns a description." alt="" coords="832,5,1021,32"/>
+<area shape="rect" id="node5" href="$classmy_m_q_t_t.html#a260a10a835dc83e7268bc901c5a45a00" title="Writes Error&#45;Message about MQTT connection." alt="" coords="565,31,784,57"/>
+<area shape="rect" id="node7" href="$class_network.html#ad7fff536b31740411da0e7c8f281eda9" title="Connects to a WiFi with the given Credential." alt="" coords="346,81,510,108"/>
+<area shape="rect" id="node8" href="$class_network.html#a31ebd477ecb0f08f85b7fa52b9f2bb7a" title="Decodes the Error Values from Wifi status() and returns a description." alt="" coords="587,81,762,108"/>
+</map>

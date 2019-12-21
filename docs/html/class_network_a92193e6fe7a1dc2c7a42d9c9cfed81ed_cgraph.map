@@ -1,0 +1,5 @@
+<map id="Network::init" name="Network::init">
+<area shape="rect" id="node1" title="Intitialize WLan&#45;Hardware." alt="" coords="5,5,100,32"/>
+<area shape="rect" id="node2" href="$class_network.html#ad7fff536b31740411da0e7c8f281eda9" title="Connects to a WiFi with the given Credential." alt="" coords="148,5,312,32"/>
+<area shape="rect" id="node3" href="$class_network.html#a31ebd477ecb0f08f85b7fa52b9f2bb7a" title="Decodes the Error Values from Wifi status() and returns a description." alt="" coords="360,5,535,32"/>
+</map>
