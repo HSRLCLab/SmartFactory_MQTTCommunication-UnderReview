@@ -74,11 +74,23 @@ It's tested with a [Esp32 DevKitC](https://www.espressif.com/en/products/hardwar
 ## Software
 All functions and files are documented on the [GitHub-Page with Doxygen](https://lmazzole.github.io/SmartFactory_MQTTCommunication/)
 
-### Dependency graph
+
+### UML
+
+The figure below shows the data model in UML notation.
 
 <p align="center">
-    <a href=https://lmazzole.github.io/SmartFactory_MQTTCommunication/_m_q_t_t_communication_8h.html>
-        <img src="./docs/_m_q_t_t_communication_8h__incl.png" height="200" style="border:none;"/>
+    <a href=https://github.com/philipzellweger/SmartFactory_MQTTCommunication/blob/master/docs/html/class_communication.html>
+        <img src="https://github.com/philipzellweger/SmartFactory_MQTTCommunication/blob/master/docs/html/class_communication__coll__graph.png" style="border:none;"/>
+    </a>
+    <p align="center"><small>Click on the image to open doxygen-documentation.</p>
+</p>
+
+### Include graph
+
+<p align="center">
+    <a href=https://github.com/philipzellweger/SmartFactory_MQTTCommunication/blob/master/docs/html/_m_q_t_t_communication_8h.html>
+        <img src="https://github.com/philipzellweger/SmartFactory_MQTTCommunication/blob/master/docs/html/_m_q_t_t_communication_8h__incl.png" style="border:none;"/>
     </a>
     <p align="center"><small>Click on the image to open doxygen-documentation.</p>
 </p>
@@ -88,16 +100,6 @@ External libraries:
 * [WiFi](https://www.arduino.cc/en/Reference/WiFi)
 * [ArduinoJson](https://arduinojson.org/)
 
-### Collaboration diagram
-
-<p align="center">
-    <a href=https://lmazzole.github.io/SmartFactory_MQTTCommunication/class_communication.html>
-        <img src="./docs/class_communication__coll__graph.png" height="150" style="border:none;"/>
-    </a>
-    <p align="center"><small>Click on the image to open doxygen-documentation.</p>
-</p>
-
-<div style="page-break-after: always;"></div>
 
 ### Important functions and files
 
