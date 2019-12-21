@@ -1,10 +1,8 @@
 # SmartFactory_MQTTCommunication
 
-The SmartFactroy_MQTTCommunication is an modular part of the SmartFactory project.  
-MQTTCommunication establishes a WLAN-connection and allows you to connect  
-with an MQTT-Broker to send and receive message.  
-Incomming messages need to be in a known JSON-format and will be serialized with the [SmartFactory_Messages](https://github.com/philipzellweger/SmartFactory_Messages) library.
-This library is an reduntant library with [SmartFacotry_MQTTCommunication](https://github.com/LMazzole/SmartFactory_MQTTCommunication). It uses the WiFi.h library to work with an [Esp32 DevKitC](https://www.espressif.com/en/products/hardware/esp32-devkitc/overview), in addition, the callback function and the buffers are no longer implemented in this class.
+The SmartFactroy_MQTTCommunication is an modular part of the SmartFactory project. MQTTCommunication establishes a WLAN-connection and allows you to connect with an MQTT-Broker to send and receive message.  
+Incomming messages have to be in a known JSON-format and will be serialized with the [SmartFactory_Messages](https://github.com/philipzellweger/SmartFactory_Messages) library.
+This library is an redundant library with [SmartFacotry_MQTTCommunication](https://github.com/LMazzole/SmartFactory_MQTTCommunication). It uses the WiFi.h library to work with an [Esp32 DevKitC](https://www.espressif.com/en/products/hardware/esp32-devkitc/overview). In addition the callback function and the buffers are no longer implemented in this class.
 
 <!-- add Pagebreak in Print: <div style="page-break-after: always;"></div> -->
 
