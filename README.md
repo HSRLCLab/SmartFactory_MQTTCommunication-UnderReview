@@ -1,17 +1,14 @@
 # SmartFactory_MQTTCommunication
 
-The SmartFactroy_MQTTCommunication is an modular part of the SmartFactory project.  
-MQTTCommunication establishes a WLAN-connection and allows you to connect  
-with an MQTT-Broker to send and receive message.  
-Incomming messages need to be in a known JSON-format and will be converted into a struct.  
-These messages-structs are stored in a circular-buffer.
+The SmartFactroy_MQTTCommunication is an modular part of the SmartFactory project. MQTTCommunication establishes a WLAN-connection and allows you to connect with an MQTT-Broker to send and receive message.  
+Incomming messages have to be in a known JSON-format and will be serialized with the [SmartFactory_Messages](https://github.com/philipzellweger/SmartFactory_Messages) library.
+This library is an redundant library with [SmartFacotry_MQTTCommunication](https://github.com/LMazzole/SmartFactory_MQTTCommunication). It uses the WiFi.h library to work with an [Esp32 DevKitC](https://www.espressif.com/en/products/hardware/esp32-devkitc/overview). In addition the callback function and the buffers are no longer implemented in this class.
 
 <!-- add Pagebreak in Print: <div style="page-break-after: always;"></div> -->
 
 ## Table of contents
 <!-- TOC Generated with https://magnetikonline.github.io/markdown-toc-generate/ -->
 
-- [The SmartFactory project](#the-smartfactory-project)
 - [Tools and technologies](#tools-and-technologies)
 	- [Doxygen](#doxygen)
 	- [VSCode PlatformIO](#vscode-platformio)
@@ -38,25 +35,6 @@ These messages-structs are stored in a circular-buffer.
 
 <div style="page-break-after: always;"></div>
 
-## The SmartFactory project
-
-[SmartFactory_MQTTCommunication](https://github.com/LMazzole/SmartFactory_MQTTCommunication) is part of the SmartFactory-project. It provides a library with basic MQTT-Communication functions.
-
-Other SmartFactory-components are:
-* [SmartFactory_Box-Sortic](<https://github.com/LMazzole/SmartFactory_Box-Sortic>)
-
-A possible implementation of the SmartFactory-project can be seen in the Sortic-showcase:
-
-<p align="center"><img src="./docs/images/RepoOverview.png" height="300"/></p>
-
-The associated  repositorys are:  
-  [SmartFactory-Sortic](https://github.com/LMazzole/SmartFactory-Sortic)  
-  [SmartFactory_Box-Sortic](https://github.com/LMazzole/SmartFactory_Box-Sortic)  
-  [SmartFactory_Vehicle-Sortic](https://github.com/LMazzole/SmartFactory_Vehicle-Sortic)  
-  [SmartFactory_Vehicle-Basis](https://github.com/LMazzole/SmartFactory_Vehicle-Basis)  
-  [SmartFactory_MQTTCommunication](https://github.com/LMazzole/SmartFactory_MQTTCommunication)  
-
-<div style="page-break-after: always;"></div>
 
 ## Tools and technologies
 
@@ -74,13 +52,13 @@ The used IDE is [VSCode](https://code.visualstudio.com/) with the [PlatformIO](h
 MQTT (Message Queuing Telemetry Transport) is a lightweight publish-subscribe messaging protocol and requires a broker to relay the messages. It's used for M2M (machine-to-machine) communication.  
 An MQTT-system always consist of a broker and one or multiple clients, which can be either subscriber or publisher. 
 
-<p align="center"><img src="./docs/images/MQTTPublishSubscribe.png" height="300"/></p> 
+![mqtt](https://www.eclipse.org/community/eclipse_newsletter/2014/october/images/article1.1.png)
 
 [Image: [MQTT101 - Eclispe Foundation](<https://www.eclipse.org/community/eclipse_newsletter/2014/october/article2.php>)]
 
 A client can subscribe and publish to one or multiple topics. Topics are organized in a tree similar to a folder-structure in Windows. Here's an example of how such a topic-tree and published message can look like:
 
-<p align="center"><img src="./docs/images/MQTTTopics.png" height="600"/></p>
+<p align="center"><img src="./docs/MQTTTopics.png" height="600"/></p>
 
 This images also illustrates the scalability of MQTT appropriately.  
 For more Infos about MQTT and MQTT-topics check out the MQTT-Wiki on [Github](https://github.com/mqtt/mqtt.github.io/wiki).   
@@ -88,23 +66,10 @@ For more Infos about MQTT and MQTT-topics check out the MQTT-Wiki on [Github](ht
 
 <div style="page-break-after: always;"></div>
 
-### Circular buffer
-A circular buffer or a ring-buffer uses an buffer with fixed Size. If the buffer is full the oldest element gets overwritten.
-
-<p align="center">
-    <a href=https://en.wikipedia.org/wiki/Circular_buffer>
-        <img src="./docs/images/Circular_Buffer_Animation.gif" height="300" style="border:none;"/>
-    </a>
-</p>
-
-[Image: [Wiki: Circular buffer](https://en.wikipedia.org/wiki/Circular_buffer)]
-
-<div style="page-break-after: always;"></div>
-
 # Documentation
 ## Hardware
 This code needs a WLAN-shield to function properly.  
-It's tested with a [Adafruit Feather M0 WiFi - ATSAMD21 + ATWINC1500](https://www.adafruit.com/product/3010) from Adafruit.
+It's tested with a [Esp32 DevKitC](https://www.espressif.com/en/products/hardware/esp32-devkitc/overview) from Espressif.
 
 ## Software
 All functions and files are documented on the [GitHub-Page with Doxygen](https://lmazzole.github.io/SmartFactory_MQTTCommunication/)
@@ -120,9 +85,8 @@ All functions and files are documented on the [GitHub-Page with Doxygen](https:/
 
 External libraries:  
 * [PubSubClient](https://pubsubclient.knolleary.net/)
-* [WiFi101](https://www.arduino.cc/en/Reference/WiFi101)
+* [WiFi](https://www.arduino.cc/en/Reference/WiFi)
 * [ArduinoJson](https://arduinojson.org/)
-* [CircularBuffer](https://github.com/rlogiacco/CircularBuffer)
 
 ### Collaboration diagram
 
@@ -148,44 +112,9 @@ It provides the functions for:
 In the *CommunicationConfiguration.h*-file are all important settings defined:
 * WLAN SSID
 * WLAN password
-* WLAN Shield pins
 * MQTT Broker IP
 * JSON parse size
-* Cirrcular Buffer size
 
-#### myJSONStr.h
-In the *myJSONStr.h*-file is defined how the JSON-message and hence the struct looks like.
-
-This is how the JSON-message (received as String) can look like:
-``` javascript
-{
-  "id": "hostname",
-  "topic": "topic/topic",
-  "status": "driving",
-  "sector": "transit",
-  "line": 1,
-  "ack":"hostname",
-  "req":"hostname",
-  "cargo":"beer",
-  "token":false;
-  "error":false
-}
-```
-And the corresponding struct in which the message gets parsed:
-``` cpp
-struct myJSONStr {
-    String id = "hostname";
-    String topic = "topic/topic";
-    String status = "driving";
-    String sector = "transit";
-    int line = 1;
-    String ack = "hostname";
-    String req = "hostname";
-    String cargo = "beer";
-    bool token = false;
-    bool error = false;
-};
-```
 
 <div style="page-break-after: always;"></div>
 
@@ -196,21 +125,35 @@ struct myJSONStr {
 #### Where can I change the configurations like MQTT-Broker IP and WLAN-Credentials?  
 > All the Configuration data is stored in the *CommunicationConfiguration.h* file and can be edited there.
 
-#### I'd like to change the incoming JSON-Message. How can I do that?  
-> Incoming messages need to be in a know JSON-Format which is defined in* myJSONStr.h* and needs to match the implementation in *myJSON::parsingJSONToStruct*. If you would like to change this format you need to adapt both files.
+
 
 
 # ToDo's
-The open ToDo's can be found in the Documentation on the [GitHub-Page](https://lmazzole.github.io/SmartFactory_MQTTCommunication/todo.html)
-- [ ] Split the code in 2 repos: MQTTCommunication-Sortic and MQTTCommunication in order to increase reusability.
+
+- [ ]
 
 # Contributors
+- [Philip Zellweger](https://github.com/philipzellweger)
 - [Luca Mazzoleni](https://github.com/LMazzole)
 - Luciano Bettinaglio
 
 # Changelog
 V 1.0	-	Release BA FS19	-	[Luca Mazzoleni](https://github.com/LMazzole)
 
+V 2.0   -	Release SA HS20 -	[Philip Zellweger](https://github.com/philipzellweger)
+
 # License
 
 MIT License
+
+# Links to SmartFactory
+- [SmartFactory-Sortic](https://github.com/LMazzole/SmartFactory-Sortic)
+- [SmartFactory_Box-Sortic](https://github.com/LMazzole/SmartFactory_Box-Sortic)
+- [SmartFactory_Vehicle-Sortic](https://github.com/LMazzole/SmartFactory_Vehicle-Sortic)
+- [SmartFactory_Vehicle-Basis](https://github.com/LMazzole/SmartFactory_Vehicle-Basis)
+- [SmartFactory_SorticRoboter](https://github.com/philipzellweger/SmartFactory_SorticRoboter)
+- [SmartFactory_SorticRoboter_CommunicationHub](https://github.com/philipzellweger/SmartFactory_SorticRoboter_CommunicationHub)
+- [SmartFactory_MQTTCommunication](https://github.com/LMazzole/SmartFactory_MQTTCommunication) for Adafruit Feather M0 Wifi
+- [SmartFactory_MQTTCommunication](https://github.com/philipzellweger/SmartFactory_MQTTCommunication) for Esp32 DevKitC
+- [SmartFactory_I2cCommunication](https://github.com/philipzellweger/SmartFactory_I2cCommunication)
+- [SmartFactory_Messages](https://github.com/philipzellweger/SmartFactory_Messages)
