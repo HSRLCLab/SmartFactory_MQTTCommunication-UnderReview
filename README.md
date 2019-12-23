@@ -80,7 +80,7 @@ All functions and files are documented on the [GitHub-Page with Doxygen](https:/
 The figure below shows the data model in UML notation.
 
 <p align="center">
-    <a href=https://github.com/philipzellweger/SmartFactory_MQTTCommunication/blob/master/docs/html/class_communication.html>
+    <a href= https://philipzellweger.github.io/SmartFactory_MQTTCommunication/class_communication.html>
         <img src="https://github.com/philipzellweger/SmartFactory_MQTTCommunication/blob/master/docs/html/class_communication__coll__graph.png" style="border:none;"/>
     </a>
     <p align="center"><small>Click on the image to open doxygen-documentation.</p>
@@ -89,7 +89,7 @@ The figure below shows the data model in UML notation.
 ### Include graph
 
 <p align="center">
-    <a href=https://github.com/philipzellweger/SmartFactory_MQTTCommunication/blob/master/docs/html/_m_q_t_t_communication_8h.html>
+    <a href= https://philipzellweger.github.io/SmartFactory_MQTTCommunication/_m_q_t_t_communication_8h.html>
         <img src="https://github.com/philipzellweger/SmartFactory_MQTTCommunication/blob/master/docs/html/_m_q_t_t_communication_8h__incl.png" style="border:none;"/>
     </a>
     <p align="center"><small>Click on the image to open doxygen-documentation.</p>
