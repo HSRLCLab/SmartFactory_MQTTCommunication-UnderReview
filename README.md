@@ -1,3 +1,5 @@
+> :warning: **This code needs a review**: Reveiw with nyfelix needed and then merge into SmartFactory_MQTTCommunication
+
 # SmartFactory_MQTTCommunication
 
 The SmartFactroy_MQTTCommunication is an modular part of the SmartFactory project. MQTTCommunication establishes a WLAN-connection and allows you to connect with an MQTT-Broker to send and receive message.  
